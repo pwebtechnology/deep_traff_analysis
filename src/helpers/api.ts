@@ -19,7 +19,7 @@ const HEADERS = {
   }
 };
 
-export const getTotalAfяiliatesData: GetAffiliatsWithoutParams = async() => {
+export const getTotalAffiliatesData: GetAffiliatsWithoutParams = async() => {
   return await axios.get(`${API_URL}total_data_no_params`, HEADERS)
     .then(res => res.data)
     .catch(err => {
