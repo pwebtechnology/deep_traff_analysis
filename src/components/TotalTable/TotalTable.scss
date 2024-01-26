@@ -10,6 +10,7 @@
     border: 1px solid $color-secondary;
     border-collapse: collapse;
     border-radius: 8px;
+    max-height: inherit;
   }
 
   &__header {
