@@ -13,9 +13,14 @@ type CompareParams = {
 type GetAffiliatesDataCompare = (compareParams: CompareParams) => Promise<CohortData>;
 
 const API_URL = 'https://c440-169-150-240-237.ngrok-free.app/';
+const HEADERS = {
+  headers: {
+  'ngrok-skip-browser-warning': '1',
+  }
+};
 
 export const getTotalAffiliatesData: GetAffiliatsWithoutParams = async() => {
-  return await axios.get(`${API_URL}/total_data_no_params`)
+  return await axios.get(`${API_URL}/total_data_no_params`, HEADERS)
     .then(res => res.data)
     .catch(err => {
       throw Error('Failed to fetch affiliates:' + err);
@@ -23,7 +28,7 @@ export const getTotalAffiliatesData: GetAffiliatsWithoutParams = async() => {
 };
 
 export const getTotalAffiliatesDataPrevDay: GetAffiliatsWithoutParams = async() => {
-  return await axios.get(`${API_URL}/total_data_prev_day`)
+  return await axios.get(`${API_URL}/total_data_prev_day`, HEADERS)
     .then(res => res.data)
     .catch(err => {
       throw Error('Failed to fetch affiliates:' + err);
@@ -31,7 +36,7 @@ export const getTotalAffiliatesDataPrevDay: GetAffiliatsWithoutParams = async() 
 }
 
 export const getAffiliatesDataCompare: GetAffiliatesDataCompare = async(params) => {
-  return await axios.get(`${API_URL}/total_data_compare`, { params })
+  return await axios.get(`${API_URL}/total_data_compare`, { params, headers: HEADERS.headers })
     .then(res => res.data)
     .catch(err => {
       throw Error('Failed to fetch affiliates:' + err);
