@@ -2,8 +2,6 @@
 @import "../../styles/mixins"; 
 
 .total-table {
-  max-height: inherit;
-
   &__table {
     display: block;
     overflow: auto;
@@ -12,7 +10,7 @@
     border: 1px solid $color-secondary;
     border-collapse: collapse;
     border-radius: 8px;
-    max-height: inherit;
+    max-height: 800px;
   }
 
   &__header {
@@ -76,6 +74,7 @@
       margin-bottom: 15px;
       border: 1.5px solid $color-secondary;
       border-radius: 12px;
+      max-height: 1200px;
     }
 
     &__header {
