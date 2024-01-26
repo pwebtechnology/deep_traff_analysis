@@ -1,0 +1,29 @@
+@import '../../styles/mixins'; 
+
+.table-container {
+  display: flex;
+  column-gap: 20px;
+
+  &__table {
+    flex-grow: 3;
+    min-width: 1350px;
+    max-height: 800px;
+  }
+
+  &__filters {
+    width: 300px;
+  }
+
+  @include onBigScreen {
+    column-gap: 30px;
+
+    &__table {
+      min-width: 2000px;
+      max-height: 1200px;
+    }
+
+    &__filters {
+      width: 450px;
+    }
+  }
+}

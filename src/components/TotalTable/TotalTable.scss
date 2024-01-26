@@ -1,0 +1,126 @@
+@import "../../styles/vars"; 
+@import "../../styles/mixins"; 
+
+.total-table {
+  &__table {
+    display: block;
+    overflow: auto;
+    margin-bottom: 10px;
+    table-layout: fixed;
+    border: 1px solid $color-secondary;
+    border-collapse: collapse;
+    border-radius: 8px;
+  }
+
+  &__header {
+    background-color: $color-primary;
+    color: $color-bgc-and-hbr;
+    padding: 5px;
+    text-align: center;
+
+    @include body-text;
+  }
+
+  &__row {
+    &:nth-of-type(odd) {
+      background:$color-elements;
+    }
+  
+    @include body-text;
+  }
+
+  &__header-item {
+    font-family: $font-bold;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 15px;
+    @include buttons;
+    overflow: hidden;
+
+  }
+
+  &__item {
+    font-family: $font-regular;
+    padding: 5px;
+    text-align: center;
+    &:not(:first-child) {
+      border-left: 1px solid $color-secondary;
+    }
+  }
+
+  &__button {
+    width: 90px;
+    height: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    border-radius: 3px;
+
+    background-color: $color-primary;
+    color: $color-white;
+    @include buttons;
+    cursor: pointer;
+    transition: box-shadow $transition-time;
+
+    &:hover {
+      box-shadow: 0 3px 13px 0 #17203142;
+    }
+  }
+
+  @include onBigScreen {
+    &__table {
+      margin-bottom: 15px;
+      border: 1.5px solid $color-secondary;
+      border-radius: 12px;
+    }
+
+    &__header {
+      padding: 8px;
+  
+      @include body-text-big;
+    }
+  
+    &__row {
+      @include body-text-big;
+    }
+  
+    &__header-item {
+      padding: 8px;
+      @include buttons-big;
+    }
+  
+    &__item {
+      padding: 8px;
+      &:not(:first-child) {
+        border-left: 1.5px solid $color-secondary;
+      }
+    }
+  
+    &__button {
+      width: 135px;
+      height: 45px;
+      border-radius: 5px;
+  
+      @include buttons-big;
+  
+      &:hover {
+        box-shadow: 0 5px 20px 0 #17203142;
+      }
+    }
+  }
+}
+
+.sort-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__text {
+    margin-right: 5px;
+
+    @include onBigScreen {
+      margin-right: 8px;
+    }
+  }
+}

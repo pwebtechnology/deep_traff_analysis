@@ -1,0 +1,123 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.metric-card {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 15px;
+  border: solid 1px $color-elements;
+  width: 100%;
+  transition: box-shadow $transition-time;
+  border-radius: 8px;
+
+  &:hover {
+    box-shadow: 0 0 11px $color-secondary;
+  }
+
+  &__title {
+    max-width: 280px;
+    margin-bottom: 2px;
+
+    color: $color-primary;
+    @include caption;
+  }
+
+  &__value-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $color-secondary;
+
+    &--up {
+      color: $color-green;
+    }
+
+    &--down {
+      color: $color-red;
+    }
+  }
+
+  &__compare {
+    font-family: $font-semibold;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  &__value {
+    @include h2;
+    color: $color-primary;
+    text-align: center;
+
+    &--bottom-margin {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__bar {
+    width: 250px;
+    margin: 0 auto;
+    height: 35px;
+    @include small-text;
+  }
+
+  &__caption {
+    @include small-text;
+    color: $color-secondary;
+    margin-bottom: 15px;
+  }
+
+  @include onBigScreen {
+    padding: 23px;
+    border-width: 1.5px;
+    border-radius: 12px;
+
+    &:hover {
+      box-shadow: 0 0 17px $color-secondary;
+    }
+
+    &__title {
+      max-width: 420px;
+      margin-bottom: 3px;
+
+      @include caption-big;
+    }
+
+    &__value-container {
+      gap: 23px;
+    }
+
+    &__right {
+      gap: 15px;
+    }
+
+    &__compare {
+      font-size: 24px;
+      line-height: 27px;
+    }
+
+    &__value {
+      @include h2-big;
+
+      &--bottom-margin {
+        margin-bottom: 12px;
+      }
+    }
+
+    &__bar {
+      width: 375px;
+      height: 53px;
+      @include small-text-big;
+    }
+
+    &__caption {
+      @include small-text-big;
+      margin-bottom: 23px;
+    }
+  }
+}

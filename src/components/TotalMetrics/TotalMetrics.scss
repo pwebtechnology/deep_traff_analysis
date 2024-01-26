@@ -1,0 +1,23 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.total-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, $card-width);
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+
+  &__item {
+    width: $card-width;
+  }
+
+  @include onBigScreen {
+    grid-template-columns: repeat(auto-fill, $card-width-big);
+    gap: 50px;
+
+    &__item {
+      width: $card-width-big;
+    }
+  }
+}

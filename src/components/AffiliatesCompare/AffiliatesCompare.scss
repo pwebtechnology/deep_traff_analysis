@@ -1,0 +1,20 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.affiliates-compare {
+  display: flex;
+
+  &__control-panel {
+    margin-right: 20px;
+
+    min-width: 15%;
+
+    @include onBigScreen {
+      margin-right: 30px;
+    }
+  }
+
+  &__charts-container {
+    width: 85%;
+  }
+}

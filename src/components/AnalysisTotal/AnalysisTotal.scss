@@ -1,0 +1,26 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.analysis-total {
+  &__title {
+    @include h2;
+    
+    margin-bottom: 20px;
+  }
+
+  &__table-container {
+    margin: 0 auto 40px;
+  }
+
+  @include onBigScreen {
+    &__title {
+      @include h2-big;
+
+      margin-bottom: 30px;
+    }
+
+    &__table-container {
+      margin-bottom: 60px;
+    }
+  }
+}

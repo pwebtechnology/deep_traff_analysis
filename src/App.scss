@@ -1,0 +1,11 @@
+@import "./styles/fonts/fonts";
+@import "./styles/vars";
+@import "./styles/.typoghraphy";
+
+.App {
+  scroll-behavior: smooth;
+
+  &__main {
+    min-height: calc(100vh - #{$header-height} - #{$footer-height});
+  }
+}

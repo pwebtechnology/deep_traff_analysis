@@ -1,0 +1,59 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.header {
+  padding-left: 24px;
+  box-shadow: 0 1px $color-elements;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    height: $header-height;
+
+    color: $color-secondary;
+    font-family: $font-bold;
+  }
+
+  &__logo {
+    margin-right: 64px;
+
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale($scale-value);
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 48px;
+    }
+  }
+
+  &__link {
+    @include link;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 3px;
+      bottom: -24px;
+      background-color: $color-primary;
+      width: 100%;
+      transform: scale(0);
+      transition: transform $transition-time;
+    }
+    
+    &:hover {
+      color: $color-primary;
+
+      &::before {
+        transform: scale(1);
+      }
+    }
+  }
+}
