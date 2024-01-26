@@ -2,6 +2,8 @@
 @import "../../styles/mixins"; 
 
 .total-table {
+  max-height: inherit;
+
   &__table {
     display: block;
     overflow: auto;
