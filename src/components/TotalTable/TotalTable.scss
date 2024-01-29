@@ -75,10 +75,9 @@
 
   &__overflow {
     overflow-x: auto;
-    scrollbar-width: thin;
   
     &::-webkit-scrollbar {
-      height: 2px;
+      display: none;
     }
   }
 
