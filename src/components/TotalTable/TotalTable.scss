@@ -47,6 +47,8 @@
     font-family: $font-regular;
     padding: 5px;
     text-align: center;
+    max-width: 100px;
+
     &:not(:first-child) {
       border-left: 1px solid $color-secondary;
     }
@@ -69,6 +71,11 @@
     &:hover {
       box-shadow: 0 3px 13px 0 #17203142;
     }
+  }
+
+  &__overflow {
+    overflow: scroll;
+    scrollbar-width: thin;
   }
 
   @include onBigScreen {
@@ -95,6 +102,8 @@
   
     &__item {
       padding: 8px;
+      max-width: 150px;
+
       &:not(:first-child) {
         border-left: 1.5px solid $color-secondary;
       }
@@ -127,3 +136,4 @@
     }
   }
 }
+

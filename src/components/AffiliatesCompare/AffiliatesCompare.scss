@@ -7,7 +7,7 @@
   &__control-panel {
     margin-right: 20px;
 
-    min-width: 15%;
+    width: 15%;
 
     @include onBigScreen {
       margin-right: 30px;
