@@ -74,7 +74,7 @@
   }
 
   &__overflow {
-    overflow: scroll;
+    overflow-x: auto;
     scrollbar-width: thin;
   }
 
