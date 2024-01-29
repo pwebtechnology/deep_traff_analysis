@@ -20,6 +20,8 @@
     color: $color-bgc-and-hbr;
     padding: 5px;
     text-align: center;
+    position: sticky;
+    top: 0;
 
     @include body-text;
   }
@@ -40,7 +42,8 @@
     line-height: 15px;
     @include buttons;
     overflow: hidden;
-
+    position: sticky;
+    top: 0;
   }
 
   &__item {
