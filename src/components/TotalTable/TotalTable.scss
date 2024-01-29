@@ -76,6 +76,10 @@
   &__overflow {
     overflow-x: auto;
     scrollbar-width: thin;
+  
+    &::-webkit-scrollbar {
+      width: 1px;
+    }
   }
 
   @include onBigScreen {
