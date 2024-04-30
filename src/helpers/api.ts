@@ -15,7 +15,7 @@ type GetAffiliatesDataCompare = (compareParams: CompareParams) => Promise<Cohort
 const API_URL = 'https://d616-84-17-53-119.ngrok-free.app/';
 const HEADERS = {
   headers: {
-  'ngrok-skip-browser-warning': true,
+  //'ngrok-skip-browser-warning': true,
   }
 };
 
