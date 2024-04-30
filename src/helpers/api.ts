@@ -12,7 +12,7 @@ type CompareParams = {
 };
 type GetAffiliatesDataCompare = (compareParams: CompareParams) => Promise<CohortData>;
 
-const API_URL = 'https://172c-169-150-240-237.ngrok-free.app/';
+const API_URL = 'https://4133-84-17-53-119.ngrok-free.app/';
 const HEADERS = {
   headers: {
   'ngrok-skip-browser-warning': true,
