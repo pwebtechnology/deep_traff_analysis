@@ -16,6 +16,7 @@ const API_URL = 'https://859a-84-17-53-119.ngrok-free.app/';
 const HEADERS = {
   headers: {
   'ngrok-skip-browser-warning': true,
+  'Access-Control-Allow-Origin': '*',
   }
 };
 
