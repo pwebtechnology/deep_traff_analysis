@@ -15,7 +15,7 @@ export const AnalysisPage = () => {
         <AnalysisTotal />
       </div>
 
-      <div className="analysis-page__compare">
+      <div className="analysis-page__compare" id="compare-table">
         <h2 className="analysis-page__subtitle">Cohort affilates compare</h2>
 
         <AffiliatesCompare />
