@@ -15,11 +15,11 @@ export const AnalysisTotal = () => {
   
       {!isError && (
         <>
-          <div className="analysis-total__table-container">
+          <div className="analysis-total__table-container" id="total-table">
             <TableContainer />
           </div>
 
-          <div className="analysis-total__metrics">
+          <div className="analysis-total__metrics" id="summary-charts">
             <h2 className="analysis-total__title">Key metrics summary</h2>
 
             <TotalMetrics />
