@@ -1,0 +1,18 @@
+@import '../utilities/vars';
+@import '../utilities/mixins';
+
+.invalid-page {
+  @include page;
+
+  &__title {
+    @include title;
+  }
+
+  @include onBigScreen {
+    @include page-big;
+
+    &__title {
+      @include title-big;
+    }
+  }
+}
