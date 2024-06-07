@@ -3,13 +3,12 @@
 
 .header {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
   height: $header-height;
-
   color: $color-secondary;
   font-family: $font-bold;
-
-  padding-left: 24px;
+  padding: 0 24px;
   box-shadow: 0 1px $color-elements;
 
   &__logo {

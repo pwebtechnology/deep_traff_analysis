@@ -2,6 +2,7 @@
 @import '../utilities/mixins';
 
 .footer {
+  flex: 0 0 auto;
   padding: 0 152px;
   box-shadow: 0 -1px $color-elements;
   background-color: $color-primary;

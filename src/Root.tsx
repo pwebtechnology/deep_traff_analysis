@@ -1,9 +1,12 @@
+import CircularProgress from '@mui/material/CircularProgress';
 import { Suspense, lazy } from 'react';
 import {
   RouterProvider,
   createBrowserRouter,
   redirect,
 } from 'react-router-dom';
+
+import './assets/styles/index.scss';
 
 const Layout = lazy(() => import('./Layout'));
 const ReportPage = lazy(() => import('./pages/ReportPage'));
@@ -14,12 +17,22 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: (
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div className='loader'>
+            <CircularProgress />
+          </div>
+        }>
         <Layout />
       </Suspense>
     ),
     errorElement: (
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div className='loader'>
+            <CircularProgress />
+          </div>
+        }>
         <InvalidPage />
       </Suspense>
     ),
@@ -31,7 +44,12 @@ const router = createBrowserRouter([
       {
         path: 'analysis',
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div className='loader'>
+                <CircularProgress />
+              </div>
+            }>
             <AnalysisPage />
           </Suspense>
         ),
@@ -39,7 +57,12 @@ const router = createBrowserRouter([
       {
         path: 'report',
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div className='loader'>
+                <CircularProgress />
+              </div>
+            }>
             <ReportPage />
           </Suspense>
         ),
