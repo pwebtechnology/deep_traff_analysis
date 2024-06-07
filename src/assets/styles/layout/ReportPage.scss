@@ -4,20 +4,19 @@
 
 .report {
   &__wrapper {
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex: 1 0 auto;
     align-items: flex-start;
   }
 
   &__sidebar {
-    padding: 10px;
   }
 
   &__filter {
     &-title {
+      padding: 10px;
       height: 40px;
-      padding: 5px;
       display: flex;
       cursor: pointer;
       font-size: 18px;

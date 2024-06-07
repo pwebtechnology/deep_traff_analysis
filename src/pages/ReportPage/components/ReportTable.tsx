@@ -48,12 +48,7 @@ export const ReportTable = () => {
     },
   });
 
-  if (isError)
-    return (
-      <div>
-        Something went wrong {'=('} {error.code} {error.message}
-      </div>
-    );
+  if (isError) return <div>{`Something went wrong: "${error.message}"`}</div>;
 
   return (
     <div className='report__table-wrapper'>
@@ -91,7 +86,7 @@ export const ReportTable = () => {
           className='table__pagination-button'
           onClick={() => table.firstPage()}
           disabled={!table.getCanPreviousPage()}>
-          <PiArrowLineLeft width={20} />
+          <PiArrowLineLeft />
         </button>
         <button
           className='table__pagination-button'
