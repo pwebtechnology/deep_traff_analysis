@@ -5,14 +5,14 @@ const HEADERS = {
   'ngrok-skip-browser-warning': true,
 };
 
-export const fetchReport = async (pagination: any, signal: AbortSignal) => {
-  const params = {
-    page: pagination.pageIndex + 1,
-    page_size: pagination.pageSize,
-  };
+export const fetchReport = async (params: any) => {
+  // const params = {
+  //   page: pagination.pageIndex + 1,
+  //   page_size: pagination.pageSize,
+  //   ...filters,
+  // };
   const { data } = await axios.get(`${BASE_URL}/get_builder_data_props`, {
     params,
-    signal,
   });
   return data;
 };

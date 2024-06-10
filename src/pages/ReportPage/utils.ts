@@ -195,6 +195,11 @@ export const METRICS: ReportFilterItem[] = [
   },
 ];
 
+export type ReportFilters = {
+  dimentions: string[];
+  metrics: string[];
+};
+
 const columnHelper = createColumnHelper<TraderMetric>();
 
 export const REPORT_BUILDER_COLUMNS = [

@@ -10,6 +10,7 @@ export type ReportFilterProps = {
 
 export type ReportFilterListItemProps = {
   filter: ReportFilterItem;
+  filterName: string;
 };
 
 export type TraderMetric = {

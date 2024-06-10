@@ -6,6 +6,8 @@ import {
 import React, { createContext, useContext, useState } from 'react';
 import { fetchReport } from '../../api/report-api';
 import { TraderMetric } from '../../pages/ReportPage/model';
+import { ReportFilters } from '../../pages/ReportPage/utils';
+import useDebounce from '../hooks/useDebaunce';
 
 type ReportContextType = UseQueryResult<TraderMetric[], Error> | null;
 
@@ -35,16 +37,38 @@ export default function ReportContextProvider({
     pageSize: 20,
   });
 
+  const [filters, setFilters] = useState<ReportFilters>({
+    metrics: [],
+    dimentions: [],
+  });
+
+  const [params, setParams] = useState({
+    pageIndex: 0,
+    pageSize: 20,
+    metrics: [],
+    dimentions: [],
+  });
+
+  const debauncedFilters = useDebounce(filters, 500);
+  const debauncedPagination = useDebounce(pagination, 200);
+
   const reportQuery = useQuery<TraderMetric[]>({
-    queryKey: ['report', pagination],
-    queryFn: ({ signal }) => fetchReport(pagination, signal),
+    queryKey: ['report', debauncedFilters, debauncedPagination],
+    queryFn: () => fetchReport({ ...debauncedFilters, ...debauncedPagination }),
     placeholderData: keepPreviousData,
     refetchOnWindowFocus: false,
   });
 
   return (
     <ReportContext.Provider
-      value={{ ...reportQuery, pagination, setPagination }}>
+      value={{
+        ...reportQuery,
+        pagination,
+        setPagination,
+        setFilters,
+        params,
+        setParams,
+      }}>
       {children}
     </ReportContext.Provider>
   );

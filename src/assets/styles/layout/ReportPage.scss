@@ -11,22 +11,37 @@
   }
 
   &__sidebar {
+    padding: 10px;
   }
 
   &__filter {
+    margin-bottom: 5px;
     &-title {
-      padding: 10px;
       height: 40px;
+      padding: 10px;
       display: flex;
-      cursor: pointer;
+      color: white;
       font-size: 18px;
+      cursor: pointer;
+      margin-bottom: 3px;
+      border-radius: 5px;
       align-items: center;
       justify-content: space-between;
+      background-color: $color-secondary;
 
       &__icon-wrapper {
         margin-left: 5px;
       }
+
+      &:hover {
+        background-color: $color-primary;
+      }
+
+      &.opened {
+        background-color: $color-primary;
+      }
     }
+
     &-list {
       overflow: hidden;
       padding: 0;
