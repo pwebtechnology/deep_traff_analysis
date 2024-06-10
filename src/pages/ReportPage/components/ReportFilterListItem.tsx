@@ -3,9 +3,9 @@ import { VscCheck } from 'react-icons/vsc';
 import { ReportFilterListItemProps } from '../model';
 
 import { useReportContext } from '../../../setup/context/ReportContext';
+import { ReportFilters } from '../utils';
 
 import '../../../assets/styles/layout/ReportPage.scss';
-import { ReportFilters } from '../utils';
 
 export const ReportFilterListItem = ({
   filter,
