@@ -1,4 +1,3 @@
-import CircularProgress from '@mui/material/CircularProgress';
 import { Suspense, lazy } from 'react';
 import {
   RouterProvider,
@@ -6,6 +5,7 @@ import {
   redirect,
 } from 'react-router-dom';
 
+import { CircularProgress } from '@mui/material';
 import './assets/styles/index.scss';
 
 const Layout = lazy(() => import('./Layout'));
@@ -69,6 +69,11 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+  // {
+  //   path: '/',
+  //   element: <HomePage />,
+  // },
 ]);
 
 export const Root = () => <RouterProvider router={router} />;

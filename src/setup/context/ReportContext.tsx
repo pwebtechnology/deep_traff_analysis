@@ -42,19 +42,12 @@ export default function ReportContextProvider({
     dimentions: [],
   });
 
-  const [params, setParams] = useState({
-    pageIndex: 0,
-    pageSize: 20,
-    metrics: [],
-    dimentions: [],
-  });
-
   const debauncedFilters = useDebounce(filters, 500);
   const debauncedPagination = useDebounce(pagination, 200);
 
   const reportQuery = useQuery<TraderMetric[]>({
     queryKey: ['report', debauncedFilters, debauncedPagination],
-    queryFn: () => fetchReport({ ...debauncedFilters, ...debauncedPagination }),
+    queryFn: () => fetchReport(debauncedPagination, debauncedFilters),
     placeholderData: keepPreviousData,
     refetchOnWindowFocus: false,
   });
@@ -66,8 +59,6 @@ export default function ReportContextProvider({
         pagination,
         setPagination,
         setFilters,
-        params,
-        setParams,
       }}>
       {children}
     </ReportContext.Provider>
