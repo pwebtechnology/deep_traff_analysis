@@ -37,7 +37,7 @@ export const ReportTable = () => {
   );
 
   const table = useReactTable({
-    data: isFetching ? defaultData : data?.data,
+    data: isFetching ? defaultData : data?.records,
     columns,
     rowCount: data?.pagination?.total_items,
     manualPagination: true,
@@ -48,7 +48,10 @@ export const ReportTable = () => {
     },
   });
 
-  if (isError) return <div>{`Something went wrong: "${error.message}"`}</div>;
+  if (isError)
+    return (
+      <div className='report__table-error'>{`Something went wrong: "${error.message}"`}</div>
+    );
 
   return (
     <div className='report__table-wrapper'>
