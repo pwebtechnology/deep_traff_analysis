@@ -7,8 +7,8 @@ const HEADERS = {
 
 export const fetchReport = async (pagination: any, filters: any) => {
   const params = {
-    page: pagination.pageIndex + 1,
-    page_size: pagination.pageSize,
+    pageIndex: pagination.pageIndex + 1,
+    pageSize: pagination.pageSize,
     ...filters,
   };
   const { data } = await axios.get(`${BASE_URL}/get_builder_data_props`, {
